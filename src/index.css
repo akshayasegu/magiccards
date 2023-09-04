@@ -1,13 +1,115 @@
 body {
-  margin: 0;
+  text-align:center;
+  margin: 20px;
+  padding: 0;
+  vertical-align: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.cards {
+  border: none;
+  background: none;
+  margin: 10px;
+}
+
+.cardimg {
+  height: 165px;
+  padding: 0px;
+}
+
+.div {
+  position: block;
+}
+
+.YesorNo{
+  background: none;
+  border: none;
+}
+
+.notClicked{
+  height: 40px;
+}
+
+.row {
+  display: inline-block
+}
+
+.headerdiv {
+  padding-top: 20px;
+}
+
+.header {
+  font-family: 'Oswald', sans-serif;
+  color: #666666;
+  outline: 5px #fda598;
+  border: 2px #666666;
+  outline-offset: 20px;
+  font-size: 50px;
+  font-weight: 500;
+}
+
+.helpbutt {
+  background:none;
+  border:none;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.helpimg {
+  height:50px;
+}
+
+.container {
+  position: relative;
+}
+
+.popup {
+  border: width 0px;
+  margin: 0px;
+}
+
+.content {
+  margin: 30px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  color: #666666;
+  font-size: 20px;
+}
+
+.Header {
+  margin: 20px;
+  font-size: 40px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+}
+
+.revealButton {
+  font-family: 'Oswald', sans-serif ;
+  font-weight: 400;
+  font-size:30px;
+  color: #666666;
+  margin: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background:white;
+  border: 2px, #666666 ;
+  border-radius: 5px;
+}
+
+.revealtext {
+  font-family: 'Oswald', sans-serif ;
+  font-weight: 400;
+  font-size:30px;
+  color: #666666;
 }
