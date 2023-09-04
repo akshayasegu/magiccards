@@ -26,6 +26,7 @@ let click6 = 0
 let clickcalc = [click1,click2,click3,click4,click5,click6]
 let yesbutton = ["Yes1","Yes2","Yes3","Yes4","Yes5","Yes6"]
 let nobutton = ["No1", "No2", "No3", "No4", "No5", "No6"]
+let cardids = ["Card1","Card2","Card3","Card4","Card5","Card6"]
 function displayCards (id,number,clickcalc) {
   if (clickcalc[number] == 0) {
     document.getElementById(id).src = (cardimg[number])
@@ -65,6 +66,21 @@ function noButton(nobutton,number,yesbutton,cards){
     return(finalnumber);
   }
 }
+function getCards(yesbutton,nobutton,cards,clickcalc,cardids,startindx,endingindx){
+  let carddisplay = []
+  for (let i = startindx; i < endingindx; i++) {
+    carddisplay.push(
+      <div class = "row">
+        <button  className = "cards" onClick={() => displayCards(cardids[i],i,clickcalc)}><img className = "cardimg" src = {CardBackground} id = {cardids[i]}/></button>
+        <div>
+          <button className = "YesorNo" onClick = {() => handleclick(cards,i,yesbutton,nobutton)}><img id = {yesbutton[i]} className = "notClicked" src = {YesButton}/></button>
+          <button className = "YesorNo" onClick = {() => noButton(nobutton,i,yesbutton,cards)}><img id = {nobutton[i]} className = "notClicked" src = {NoButton}/></button>
+        </div>
+      </div>
+    )
+  }
+  return carddisplay;
+}
 export default function game (){
   return( 
     <div>
@@ -73,50 +89,10 @@ export default function game (){
       </div>
       <div>
         <div className = "div">
-          <div class = "row">
-            <button  className = "cards" onClick={() => displayCards("Card1",0,clickcalc)}><img className = "cardimg" src = {CardBackground} id = "Card1"/></button>
-            <div>
-              <button className = "YesorNo" onClick = {() => handleclick(cards,0,yesbutton,nobutton)}><img id = "Yes1" className = "notClicked" src = {YesButton}/></button>
-              <button className = "YesorNo" onClick = {() => noButton(nobutton,0,yesbutton,cards)}><img id = "No1" className = "notClicked" src = {NoButton}/></button>
-            </div>
-          </div>
-          <div class = "row">
-            <button  className = "cards" onClick={() => displayCards("Card2",1,clickcalc)}><img className = "cardimg" src = {CardBackground} id = "Card2"/></button>
-            <div>
-              <button className = "YesorNo" onClick = {() => handleclick(cards,1,yesbutton,nobutton)}><img id = "Yes2" className = "notClicked" src = {YesButton}/></button>
-              <button className = "YesorNo" onClick = {() => noButton(nobutton,1,yesbutton,cards)}><img id = "No2" className = "notClicked" src = {NoButton}/></button>
-            </div>
-          </div>
-          <div class = "row">
-            <button  className = "cards" onClick={() => displayCards("Card3",2,clickcalc)}><img className = "cardimg" src = {CardBackground} id = "Card3"/></button>
-            <div>
-              <button className = "YesorNo" onClick = {() => handleclick(cards,2,yesbutton,nobutton)}><img id = "Yes3" className = "notClicked" src = {YesButton}/></button>
-              <button className = "YesorNo" onClick = {() => noButton(nobutton,2,yesbutton,cards)}><img id = "No3" className = "notClicked" src = {NoButton}/></button>
-            </div>
-          </div>
+          {getCards(yesbutton,nobutton,cards,clickcalc,cardids,0,3)}
         </div>
         <div className = "div">
-          <div class = "row">
-            <button  className = "cards" onClick={() => displayCards("Card4",3,clickcalc)}><img className = "cardimg" src = {CardBackground} id = "Card4"/></button>
-            <div>
-              <button className = "YesorNo" onClick = {() => handleclick(cards,3,yesbutton,nobutton)}><img id = "Yes4" className = "notClicked" src = {YesButton}/></button>
-              <button className = "YesorNo" onClick = {() => noButton(nobutton,3,yesbutton,cards)}><img id = "No4" className = "notClicked" src = {NoButton}/></button>
-            </div>
-          </div>
-          <div class = "row">
-            <button  className = "cards" onClick={() => displayCards("Card5",4,clickcalc)}><img className = "cardimg" src = {CardBackground} id = "Card5"/></button>
-            <div>
-              <button className = "YesorNo" onClick = {() => handleclick(cards,4,yesbutton,nobutton)}><img id = "Yes5" className = "notClicked" src = {YesButton}/></button>
-              <button className = "YesorNo" onClick = {() => noButton(nobutton,4,yesbutton,cards)}><img id = "No5" className = "notClicked" src = {NoButton}/></button>
-            </div>
-          </div>
-          <div class = "row">
-            <button  className = "cards" onClick={() => displayCards("Card6",5,clickcalc)}><img className = "cardimg" src = {CardBackground} id = "Card6"/></button>
-            <div>
-              <button className = "YesorNo" onClick = {() => handleclick(cards,5,yesbutton,nobutton)}><img id = "Yes6" className = "notClicked" src = {YesButton}/></button>
-              <button className = "YesorNo" onClick = {() => noButton(nobutton,5,yesbutton,cards)}><img id = "No6" className = "notClicked" src = {NoButton}/></button>
-            </div>
-          </div>
+          {getCards(yesbutton,nobutton,cards,clickcalc,cardids,3,6)}
         </div>
       </div>
       <div>
